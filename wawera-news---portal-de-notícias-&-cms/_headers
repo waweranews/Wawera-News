@@ -1,0 +1,11 @@
+# Headers de segurança para o site
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Headers para o admin
+/admin/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff

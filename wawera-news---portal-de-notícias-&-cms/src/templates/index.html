@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Wawera News - O seu portal de entretenimento com as melhores notícias, entrevistas e coberturas exclusivas.">
+  <meta name="keywords" content="entretenimento, notícias, Angola, cultura, música, entrevistas">
+  <meta name="author" content="Wawera News">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Wawera News | O teu mundo de entretenimento">
+  <meta property="og:description" content="Wawera News - O seu portal de entretenimento com as melhores notícias, entrevistas e coberturas exclusivas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://waweranews-ao.netlify.app">
+  <meta property="og:image" content="/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wawera News | O teu mundo de entretenimento">
+  <meta name="twitter:description" content="O seu portal de entretenimento com as melhores notícias e entrevistas exclusivas.">
+  
+  <title>Wawera News | O teu mundo de entretenimento</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="/images/logo.png" alt="Wawera News">
+    </div>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Início</a></li>
+      <li><a href="#portfolio">Destaques</a></li>
+      <li><a href="#news">Notícias</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="/admin/" class="btn-outline" style="padding: 8px 16px;">Admin</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero scroll-reveal">
+    <div class="container">
+      <h1>Wawera News</h1>
+      <p>O seu mundo de entretenimento com as melhores notícias, entrevistas e coberturas exclusivas</p>
+      <a href="#portfolio" class="btn btn-primary">Explorar Conteúdos →</a>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio-section scroll-reveal">
+    <div class="container">
+      <h2>Conteúdos em Destaque</h2>
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="Entrevistas">🎤 Entrevistas</button>
+        <button class="filter-btn" data-filter="Coberturas">📸 Coberturas</button>
+        <button class="filter-btn" data-filter="Opinião">💭 Opinião</button>
+        <button class="filter-btn" data-filter="Eventos">🎉 Eventos</button>
+      </div>
+      <div class="portfolio-grid" id="portfolio-grid">
+        <!-- Os itens serão carregados dinamicamente pelo CMS -->
+        <div class="portfolio-card" data-category="Entrevistas">
+          <div class="card-image">
+            <img src="/images/uploads/placeholder.jpg" alt="Em breve" data-src="/images/uploads/entrevista-exemplo.jpg">
+            <div class="card-overlay">
+              <div class="card-icon">🎤</div>
+            </div>
+          </div>
+          <div class="card-content">
+            <span class="card-category">Entrevistas</span>
+            <h3 class="card-title">Em breve novos conteúdos</h3>
+            <p class="card-description">Acesse o painel administrativo para adicionar seus conteúdos em destaque.</p>
+            <a href="/admin/" class="card-link">Acessar CMS →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Clientes / Parceiros -->
+  <section class="clients-section scroll-reveal">
+    <div class="container">
+      <h2 class="section-title">Nossos Parceiros</h2>
+      <p class="section-subtitle">Instituições que confiam no nosso trabalho</p>
+      
+      <div class="clients-grid">
+        <div class="client-item">
+          <img src="https://i.imgur.com/7vlEOrZ.png" alt="LUNABRIL PALACE" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="https://i.imgur.com/7lpSroz.png" alt="INEJ" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="https://i.imgur.com/0ZjO9Xk.png" alt="CHURREX & SUSHIRREX" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="https://i.imgur.com/nhjtKJf.png" alt="CASA LUZ" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="https://i.imgur.com/rE5GRd1.png" alt="GEOVANNY GALLY" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="https://i.imgur.com/6v32RsV.png" alt="DUMAGUI" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="https://i.imgur.com/tR5LWG2.png" alt="CAWDO PARK GROUP" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="https://i.imgur.com/Mx99N7t.png" alt="DINACO COMERCIAL GERAL.LDA" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="https://i.imgur.com/NH9G2DM.png" alt="+ VIDA" class="client-logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" class="news-section scroll-reveal">
+    <div class="container">
+      <h2>Últimas Notícias</h2>
+      <div class="news-grid" id="news-grid">
+        <div class="news-card">
+          <div class="news-image">
+            <img src="/images/uploads/placeholder-news.jpg" alt="Em breve">
+          </div>
+          <div class="news-content">
+            <div class="news-date">01/04/2026</div>
+            <h3 class="news-title">Wawera News está no ar!</h3>
+            <p class="news-excerpt">Nosso portal de entretenimento acaba de ser lançado. Acompanhe as novidades em breve.</p>
+            <a href="/admin/" class="card-link">Acessar CMS →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="scroll-reveal" style="padding: 4rem 0; background: var(--surface);">
+    <div class="container">
+      <h2>Sobre o Wawera News</h2>
+      <p style="max-width: 800px; margin: 0 auto; text-align: center;">Somos um portal dedicado a levar entretenimento de qualidade para todos os angolanos. Com conteúdo exclusivo, entrevistas imperdíveis e coberturas completas dos melhores eventos.</p>
+    </div>
+  </section>
+
+  <section class="newsletter scroll-reveal">
+    <div class="container">
+      <h2>Receba nossas novidades</h2>
+      <p>Inscreva-se para receber conteúdos exclusivos em primeira mão</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Seu melhor e-mail" required>
+        <button type="submit" class="btn btn-secondary">Inscrever →</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="/images/logo-white.png" alt="Wawera News">
+        <p>O teu mundo de entretenimento</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/waweranews" target="_blank" rel="noopener noreferrer">📘</a>
+          <a href="https://instagram.com/waweranews" target="_blank" rel="noopener noreferrer">📷</a>
+          <a href="https://twitter.com/waweranews" target="_blank" rel="noopener noreferrer">🐦</a>
+        </div>
+      </div>
+      <div>
+        <h4>Links Rápidos</h4>
+        <ul style="list-style: none;">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#portfolio">Destaques</a></li>
+          <li><a href="#news">Notícias</a></li>
+          <li><a href="/admin/">Admin</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>📧 comercial0waweranews@gmail.com</p>
+        <p>📞 +244 900 000 000</p>
+        <p>📍 Luanda, Angola</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Wawera News. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Notícias"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", default: "" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Entretenimento", "Cultura", "Sociedade", "Sustentabilidade", "Mundo", "Automático"], default: "Automático" }
+      - { label: "Imagem Destaque", name: "image", widget: "image" }
+      - { label: "Resumo", name: "excerpt", widget: "text" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+      - { label: "Autor", name: "author", widget: "string", default: "Redação" }
+      - { label: "Destaque Home", name: "featured", widget: "boolean", default: false }
+
+  - name: "portfolio"
+    label: "Portfólio / Destaques"
+    folder: "src/content/portfolio"
+    create: true
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Entrevistas", "Coberturas", "Opinião"] }
+      - { label: "Imagem", name: "image", widget: "image" }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Link", name: "link", widget: "string", default: "https://wa.me/244942454003" }
+      - { label: "Ordem", name: "order", widget: "number", value_type: "int" }
+      - { label: "Activo", name: "active", widget: "boolean", default: true }
+
+  - name: "clients"
+    label: "Clientes / Parceiros"
+    folder: "src/content/clients"
+    create: true
+    fields:
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Logotipo", name: "logo", widget: "image" }
+      - { label: "Subtítulo", name: "subtitle", widget: "string", required: false }
+      - { label: "URL", name: "url", widget: "string", required: false }
+      - { label: "Ordem", name: "order", widget: "number", value_type: "int" }
+      - { label: "Destaque Especial", name: "featured", widget: "boolean", default: false }
+
+  - name: "settings"
+    label: "Configurações Gerais"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "site_config"
+        label: "Configuração do Site"
+        file: "src/content/settings/config.json"
+        fields:
+          - { label: "Título do Site", name: "title", widget: "string" }
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - { label: "Meta Descrição", name: "description", widget: "text" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - label: "Cores"
+            name: "colors"
+            widget: "object"
+            fields:
+              - { label: "Primária", name: "primary", widget: "color", default: "#0a2b3e" }
+              - { label: "Secundária", name: "secondary", widget: "color", default: "#f4a261" }
+          - label: "Redes Sociais"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram", name: "instagram", widget: "string" }
+              - { label: "Facebook", name: "facebook", widget: "string" }
+              - { label: "YouTube", name: "youtube", widget: "string" }
+              - { label: "LinkedIn", name: "linkedin", widget: "string" }
+              - { label: "TikTok", name: "tiktok", widget: "string" }
+              - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "E-mail de Contacto", name: "email", widget: "string", default: "comercial@waweranews.online" }
+          - { label: "Telefone", name: "phone", widget: "string" }
+          - { label: "Notícias por Página", name: "posts_per_page", widget: "number", default: 12 }
+          - { label: "Categoria Padrão", name: "default_category", widget: "select", options: ["Entretenimento", "Cultura", "Sociedade", "Sustentabilidade", "Mundo"], default: "Entretenimento" }
+          - label: "Alertas"
+            name: "alerts"
+            widget: "object"
+            fields:
+              - { label: "E-mail Alerta", name: "email_alert", widget: "boolean", default: true }
+              - { label: "SMS Alerta", name: "sms_alert", widget: "boolean", default: false }

@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Core Colors from Spec */
+  --color-primary: #0a2b3e;
+  --color-secondary: #f4a261;
+  --color-accent: #e76f51;
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
+  
+  /* Text Colors */
+  --color-text-primary: #2d3436;
+  --color-text-secondary: #636e72;
+
+  /* Transitions */
+  --transition-smooth: all 0.3s ease;
+
+  /* Fluid Typography Clamps */
+  --font-size-clamp-4xl: clamp(2.25rem, 5vw, 3rem);
+  --font-size-clamp-5xl: clamp(3rem, 7vw, 4rem);
+  --font-size-clamp-6xl: clamp(3.75rem, 9vw, 5rem);
+  --font-size-clamp-8xl: clamp(4.5rem, 12vw, 7rem);
+  --font-size-clamp-9xl: clamp(5.5rem, 15vw, 9rem);
+}
+
+@utility text-clamp-4xl {
+  font-size: var(--font-size-clamp-4xl);
+}
+
+@utility text-clamp-5xl {
+  font-size: var(--font-size-clamp-5xl);
+}
+
+@utility text-clamp-6xl {
+  font-size: var(--font-size-clamp-6xl);
+}
+
+@utility text-clamp-8xl {
+  font-size: var(--font-size-clamp-8xl);
+}
+
+@utility text-clamp-9xl {
+  font-size: var(--font-size-clamp-9xl);
+}
+
+@utility transition-smooth {
+  transition: var(--transition-smooth);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-sans antialiased overflow-x-hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent/30 rounded-full hover:bg-accent/50 transition-colors;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-nav {
+    @apply sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-sm;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .btn-primary {
+    @apply relative overflow-hidden bg-accent text-white px-8 py-4 rounded-xl font-bold tracking-tight transition-smooth hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/20 active:scale-95 flex items-center justify-center gap-2;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .btn-outline {
+    @apply border-2 border-accent/20 text-accent px-8 py-4 rounded-xl font-bold tracking-tight transition-smooth hover:bg-accent hover:text-white hover:border-accent active:scale-95 flex items-center justify-center gap-2;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .section-title {
+    @apply text-clamp-4xl md:text-clamp-5xl lg:text-clamp-6xl font-black text-primary mb-6 tracking-tighter leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-text-secondary mb-12 max-w-3xl font-medium leading-relaxed;
+  }
+
+  .nav-link {
+    @apply relative text-sm font-bold uppercase tracking-widest text-text-primary/70 hover:text-accent transition-colors py-2;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Extreme Responsiveness Breakpoints */
+  @media (max-width: 320px) {
+    .section-title { font-size: 2rem; }
+    .container { @apply px-3; }
+  }
+
+  @media (max-width: 480px) {
+    .btn-primary, .btn-outline { @apply w-full; }
+  }
+
+  /* Prose Typography for News Content */
+  .prose {
+    @apply max-w-none;
+  }
+  .prose p {
+    @apply mb-6 text-lg leading-relaxed text-gray-600;
+  }
+  .prose h2 {
+    @apply text-3xl font-black text-primary mt-12 mb-6;
+  }
+  .prose img {
+    @apply rounded-[2.5rem] shadow-2xl my-12 w-full;
+  }
+  .prose iframe {
+    @apply rounded-[2.5rem] shadow-2xl my-12 w-full aspect-video;
+  }
+}
+
+/* Custom Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

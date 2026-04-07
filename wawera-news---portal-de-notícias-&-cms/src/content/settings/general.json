@@ -1,0 +1,24 @@
+{
+  "site_title": "Wawera News",
+  "slogan": "O teu mundo de entretenimento",
+  "meta_description": "Wawera News - O seu portal de entretenimento com as melhores notícias, entrevistas e coberturas exclusivas de Angola e do mundo.",
+  "logo_url": "/images/logo.png",
+  "favicon_url": "/images/favicon.ico",
+  "contact_email": "comercial0waweranews@gmail.com",
+  "phone": "+244 900 000 000",
+  "address": "Luanda, Angola",
+  "social": {
+    "facebook": "https://facebook.com/waweranews",
+    "instagram": "https://instagram.com/waweranews",
+    "twitter": "https://twitter.com/waweranews",
+    "linkedin": "",
+    "youtube": ""
+  },
+  "colors": {
+    "primary": "#0a2b3e",
+    "secondary": "#f4a261",
+    "accent": "#e76f51",
+    "background": "#ffffff",
+    "text_primary": "#2d3436"
+  }
+}

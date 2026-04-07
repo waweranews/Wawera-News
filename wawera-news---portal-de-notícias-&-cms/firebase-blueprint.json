@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "A portfolio project for Wawera News",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "logo": { "type": "string" },
+        "category": { "type": "string" },
+        "work": { "type": "string" },
+        "driveLink": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "description": { "type": "string" },
+        "order": { "type": "integer" },
+        "photos": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "reels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "url": { "type": "string" },
+              "campaign": { "type": "string" }
+            }
+          }
+        }
+      },
+      "required": ["name", "logo", "category", "work", "driveLink", "order"]
+    },
+    "NewsItem": {
+      "title": "NewsItem",
+      "description": "A news article for Wawera News",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "category": { "type": "string" },
+        "image": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" }
+      },
+      "required": ["title", "date", "category", "image", "excerpt"]
+    },
+    "SiteContent": {
+      "title": "SiteContent",
+      "description": "Global site content and settings",
+      "type": "object",
+      "properties": {
+        "heroTitle": { "type": "string" },
+        "heroSub": { "type": "string" },
+        "heroText": { "type": "string" },
+        "aboutText": { "type": "string" },
+        "mission": { "type": "string" },
+        "vision": { "type": "string" },
+        "address": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Collection of portfolio projects"
+    },
+    "/news/{newsId}": {
+      "schema": "NewsItem",
+      "description": "Collection of news articles"
+    },
+    "/settings/content": {
+      "schema": "SiteContent",
+      "description": "Global site content settings"
+    }
+  }
+}
